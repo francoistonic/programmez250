@@ -1,0 +1,692 @@
+{\rtf1\ansi\ansicpg1252\cocoartf1671\cocoasubrtf600
+{\fonttbl\f0\fmodern\fcharset0 CourierNewPS-BoldMT;\f1\fmodern\fcharset0 CourierNewPSMT;\f2\fnil\fcharset0 Calibri;
+\f3\froman\fcharset0 TimesNewRomanPSMT;\f4\fswiss\fcharset0 Helvetica;}
+{\colortbl;\red255\green255\blue255;\red4\green51\blue255;\red0\green0\blue0;\red1\green25\blue147;
+\red146\green146\blue146;\red255\green64\blue255;\red255\green38\blue0;}
+{\*\expandedcolortbl;;\csgenericrgb\c1680\c19831\c100000;\csgenericrgb\c0\c0\c0;\csgenericrgb\c484\c9609\c57496;
+\csgenericrgb\c57414\c57415\c57415;\csgenericrgb\c100000\c25275\c100000;\csgenericrgb\c100000\c14913\c0;}
+\paperw11900\paperh16840\margl1440\margr1440\vieww10800\viewh8400\viewkind0
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\partightenfactor0
+
+\f0\b\fs20 \cf2 \
+impor
+\f1\b0 \cf3 t logging\
+\
+logg
+\f0\b \cf4 i
+\f1\b0 \cf3 ng.warn
+\f0\b \cf4 i
+\f1\b0 \cf5 ng('This warning message will be logge
+\f0\b \cf4 d
+\f1\b0 \cf3 !')\
+log
+\f0\b \cf4 g
+\f1\b0 \cf3 ing.
+\f0\b \cf4 i
+\f1\b0 \cf5 nfo('This is an info mess
+\f0\b \cf4 age
+\f2\b0\fs24 \cf3 '
+\f0\b\fs20 \cf2 )\
+\
+
+\f1\b0 \cf3 \
+import logging\
+\
+logging.ba
+\f0\b \cf4 s
+\f1\b0 \cf3 icCon
+\f0\b \cf4 f
+\f1\b0 \cf3 ig(leve
+\f0\b \cf4 l
+\f1\b0 \cf3 =log
+\f0\b \cf4 g
+\f1\b0 \cf3 ing.INFO
+\f0\b \cf4 )
+\f1\b0 \cf3 \
+lo
+\f0\b \cf4 g
+\f1\b0 \cf5 ging.info('This will 
+\f0\b \cf4 b
+\f3\b0\fs24 \cf3 e
+\fs8  
+\fs24 l
+\f0\b\fs20 \cf2 ogged'
+\f1\b0 \cf3 )\
+\
+\
+import log
+\f0\b \cf4 g
+\f1\b0 \cf3 ing\
+\
+logg
+\f0\b \cf4 i
+\f1\b0 \cf3 ng.basic
+\f0\b \cf4 C
+\f1\b0 \cf5 onfig(fil
+\f0\b \cf4 e
+\f1\b0 \cf3 name='lo
+\f0\b \cf4 g
+\f1\b0 \cf3 .txt')
+\f0\b \cf4 \
+
+\f1\b0 \cf5 logging.warning('This will get l
+\f0\b \cf4 o
+\f1\b0 \cf3 g
+\f3\fs24 ge
+\f0\b\fs20 \cf2 d to a
+\f1\b0 \cf3  file')\
+\
+\
+impo
+\f0\b \cf4 r
+\f1\b0 \cf3 t logging\
+\
+loggi
+\f0\b \cf4 n
+\f1\b0 \cf5 g.basicConfig(format='%(asctime)s - %(level
+\f0\b \cf4 n
+\f1\b0 \cf3 ame)s - 
+\f0\b \cf4 %
+\f1\b0 \cf5 (message)s', datefm
+\f0\b \cf4 t
+\f1\b0 \cf3 ='%d-%b-
+\f0\b \cf4 %
+\f1\b0 \cf3 y %H:%M
+\f0\b \cf4 :
+\f1\b0 \cf5 %S')\
+logging.wa
+\f0\b \cf4 r
+\f1\b0 \cf3 ni
+\f3\fs24 n
+\f0\b\fs20 \cf2 g('Use
+\f1\b0 \cf3 r logged in
+\f0\b \cf2 ')\
+\
+
+\f1\b0 \cf3 \
+import threadin
+\f0\b \cf4 g
+\f1\b0 \cf3 \
+import lo
+\f0\b \cf4 g
+\f1\b0 \cf3 ging\
+\cf5 \
+logging.basicConfig(format='%(levelname)s %(threadName)s: Ceci est le %(message)s-i\'e8m
+\f0\b \cf4 e
+\f1\b0 \cf3  message 
+\f0\b \cf4 d
+\f1\b0 \cf5 u %(threadNa
+\f0\b \cf4 m
+\f1\b0 \cf3 e)s', 
+\f0\b \cf4 f
+\f1\b0 \cf3 ilename
+\f0\b \cf4 =
+\f1\b0 \cf3 'outp
+\f0\b \cf4 ut
+\f1\b0 \cf3 .l
+\f0\b \cf2 og'
+\f1\b0 \cf3 ,\cf6  level
+\f0\b \cf4 =
+\f1\b0 \cf3 l
+\f0\b \cf4 og
+\f1\b0 \cf3 ging.
+\f0\b \cf2 DEB
+\f1\b0 \cf3 UG)
+\f0\b \cf2 \
+
+\f1\b0 \cf3 \
+\
+de
+\f0\b \cf4 f
+\f1\b0 \cf3  w
+\f0\b \cf4 o
+\f1\b0 \cf7 r\cf3 k
+\f0\b \cf4 er
+\f1\b0 \cf3 (n):\
+    for i 
+\f0\b \cf4 i
+\f1\b0 \cf3 n ran
+\f0\b \cf4 g
+\f1\b0 \cf3 e
+\f0\b \cf4 (
+\f1\b0 \cf3  n+1 ):
+\f0\b \cf4 \
+
+\f1\b0 \cf3         lo
+\f0\b \cf4 g
+\f1\b0 \cf3 ging.d
+\f0\b \cf4 e
+\f1\b0 \cf3 bug(
+\f0\b \cf4 i
+\f1\b0 \cf5 )\
+    \
+
+\f0\b \cf4 t
+\f1\b0 \cf3  = thre
+\f0\b \cf4 a
+\f1\b0 \cf3 ding.T
+\f0\b \cf4 h
+\f1\b0 \cf3 read(
+\f0\b \cf4 na
+\f1\b0 \cf7 me='th
+\f0\b \cf4 rea
+\f1\b0 \cf3 d1'
+\f0\b \cf4 ,
+\f1\b0 \cf3  target=wo
+\f0\b \cf4 r
+\f1\b0 \cf3 ker, a
+\f0\b \cf4 r
+\f1\b0 \cf3 gs=(
+\f0\b \cf4 1
+\f1\b0 \cf5 00000,))
+\f0\b \cf4 \
+
+\f1\b0 \cf3 s = thr
+\f0\b \cf4 e
+\f1\b0 \cf3 ading.
+\f0\b \cf4 T
+\f1\b0 \cf3 hread
+\f0\b \cf4 (n
+\f1\b0 \cf7 ame='
+\f0\b \cf4 thr
+\f1\b0 \cf3 ea
+\f0\b \cf4 d
+\f1\b0 \cf3 2', t
+\f0\b \cf4 ar
+\f1\b0 \cf3 ge
+\f0\b \cf4 t
+\f1\b0 \cf3 =work
+\f0\b \cf4 er, 
+\f3\b0\fs24 \cf3 a
+\f0\b\fs20 \cf2 rgs=(5
+\f1\b0 \cf3 0000,))\
+t.start(
+\f0\b \cf4 )
+\f1\b0 \cf3 \
+s.start()\
+\
+\
+
+\f0\b \cf4 i
+\f1\b0 \cf3 mport l
+\f0\b \cf4 o
+\f1\b0 \cf3 gging\
+\
+loggin
+\f0\b \cf4 g
+\f1\b0 \cf3 .\cf5 basicConfig(level=logging.DEBUG)\
+\
+phrase = 'Programmez est le seul\cf3  magazin
+\f0\b \cf4 e
+\f1\b0 \cf3  \'e9cri
+\f0\b \cf4 t
+\f1\b0 \cf3  \cf5 par et pour les d\'e9veloppeurs'\
+logging.debug(f'V
+\f0\b \cf4 o
+\f1\b0 \cf3 t
+\f0\b \cf4 r
+\f3\b0\fs24 \cf3 e
+\f0\b\fs20 \cf2  phras
+\f1\b0 \cf3 e contient
+\f0\b \cf4  
+\f1\b0 \cf3 \{le
+\f0\b \cf4 n
+\f1\b0 \cf3 (\cf7 phr
+\f0\b \cf4 a
+\f1\b0 \cf3 s\cf7 e\cf3 )
+\f0\b \cf2 \} c\cf4 a
+\f1\b0 \cf3 ract\'e8
+\f0\b \cf4 r
+\f1\b0 \cf3 es'
+\f0\b \cf4 )
+\f1\b0 \cf3 \
+
+\f0\b \cf2 \
+\
+imp
+\f1\b0 \cf3 ort logging
+\f0\b \cf2 \
+
+\f1\b0 \cf3 a,
+\f0\b \cf4  
+\f1\b0 \cf3 b = 100, 0\
+try:\
+\cf5   c = a / b\
+except Excep
+\f0\b \cf4 t
+\f1\b0 \cf3 i
+\f3\fs24 on
+\f0\b\fs20 \cf2  as e:
+\f1\b0 \cf3 \
+  loggin
+\f0\b \cf4 g
+\f1\b0 \cf3 .er
+\f0\b \cf4 r
+\f1\b0 \cf3 o\cf7 r(f
+\f0\b \cf4 "
+\f1\b0 \cf3 E\cf7 x\cf3 c
+\f0\b \cf2 ept\cf4 i
+\f1\b0 \cf3 on oc
+\f0\b \cf4 c
+\f1\b0 \cf3 urr
+\f0\b \cf4 e
+\f1\b0 \cf3 d: 
+\f0\b \cf2 \{e\}")
+\f1\b0 \cf3 \
+\
+\
+import
+\f0\b \cf2  l
+\f1\b0 \cf3 og
+\f0\b \cf4 g
+\f1\b0 \cf3 ing\
+a, b 
+\f0\b \cf4 =
+\f1\b0 \cf3  100,
+\f0\b \cf4  
+\f1\b0 \cf3 0\cf5 \
+try:\
+  c = a / b\
+exce
+\f0\b \cf4 p
+\f1\b0 \cf3 t Excepti
+\f0\b \cf4 o\cf2 n as\cf4  
+\f1\b0 \cf3 e
+\f3\fs24 :
+\f1\fs20 \
+  logging.error(f"Ex
+\f0\b \cf2 cept
+\f1\b0 \cf3 ion occurr
+\f0\b \cf2 ed: \{e
+\f1\b0 \cf3 \}", exc_in
+\f0\b \cf2 fo=T
+\f1\b0 \cf3 rue)\
+\
+
+\f0\b \cf2 # birt
+\f1\b0 \cf3 hdatemodul
+\f0\b \cf2 e.py\
+
+\f1\b0 \cf3 \
+from datetime i
+\f0\b \cf4 m
+\f1\b0 \cf3 port dateti
+\f0\b \cf4 m
+\f1\b0 \cf3 e\
+fr
+\f0\b \cf4 o
+\f1\b0 \cf3 m typin
+\f0\b \cf4 g
+\f1\b0 \cf3  impo
+\f0\b \cf4 r
+\f1\b0 \cf3 t Optio
+\f0\b \cf4 n
+\f1\b0 \cf5 al\
+import logging\
+\
+logging.basicConfig(level=
+\f0\b \cf4 l
+\f1\b0 \cf3 ogging.D
+\f0\b \cf4 E
+\f1\b0 \cf3 BUG, for
+\f0\b \cf4 m
+\f1\b0 \cf3 at='%(asc
+\f0\b \cf4 t
+\f1\b0 \cf3 ime)s %(
+\f0\b \cf4 n
+\f1\b0 \cf3 ame
+\f0\b \cf2 )s 
+\f1\b0 \cf3 %\cf6 (levelname)s:%
+\f0\b \cf4 (
+\f1\b0 \cf3 mess
+\f0\b \cf4 a
+\f1\b0 \cf3 g
+\f0\b \cf4 e)
+\f1\b0 \cf3 s')\
+logg
+\f0\b \cf4 e
+\f1\b0 \cf3 r = logg
+\f0\b \cf4 in
+\f1\b0 \cf3 g.get
+\f0\b \cf2 Lo
+\f1\b0 \cf3 gger(
+\f0\b \cf4 _
+\f1\b0 \cf3 _name__)
+\f0\b \cf2 \
+\
+
+\f1\b0 \cf3 \
+def get_birt
+\f0\b \cf2 h_date
+\f1\b0 \cf3 (
+\f0\b \cf4 d
+\f1\b0 \cf3 ate) 
+\f0\b \cf2 ->
+\f1\b0 \cf3  Optional[d
+\f0\b \cf4 a
+\f1\b0 \cf3 teti
+\f0\b \cf4 m
+\f1\b0 \cf3 e]:\
+    
+\f0\b \cf4 i
+\f1\b0 \cf3 f date:\
+        try:
+\f0\b \cf2 \
+  
+\f1\b0 \cf3          
+\f0\b \cf4  
+\f1\b0 \cf3 return (
+\f0\b \cf4 d
+\f1\b0 \cf3 ate 
+\f0\b \cf4 i
+\f1\b0 \cf3 f\cf5  isinstanc
+\f0\b \cf4 e(
+\f1\b0 \cf3 date, dat
+\f0\b \cf2 etime)
+\f1\b0 \cf3 \
+         
+\f0\b \cf4  
+\f1\b0 \cf3           else date
+\f0\b \cf4 t
+\f1\b0 \cf3 ime.s
+\f0\b \cf4 t
+\f1\b0 \cf3 r\cf5 ptime(date, '%Y-%m-%d'))\
+        except ValueError:\
+            logger.debug(f"\{date\} i
+\f0\b \cf4 s
+\f1\b0 \cf3  not in the f
+\f0\b \cf2 orm\cf4 a
+\f1\b0 \cf3 t yyyy-mm-dd. Wil
+\f0\b \cf2 l try 
+\f1\b0 \cf3 to conver
+\f0\b \cf4 t
+\f1\b0 \cf3  it to t
+\f0\b \cf4 h
+\f1\b0 \cf3 e fo
+\f0\b \cf4 r
+\f1\b0 \cf3 m\cf5 at yyyy/mm
+\f0\b \cf4 /
+\f1\b0 \cf3 dd")\
+       
+\f0\b \cf2      t
+\f1\b0 \cf3 ry:\
+      
+\f0\b \cf4  
+\f1\b0 \cf3          return datetim
+\f0\b \cf4 e
+\f1\b0 \cf3 .strp
+\f0\b \cf4 t
+\f1\b0 \cf3 i\cf5 me(date, '%Y/%m/%d')\
+            except ValueError:\
+                
+\f0\b \cf4 l
+\f1\b0 \cf3 ogger.debug(f
+\f0\b \cf2 "Unabl
+\f3\b0\fs24 \cf3 e t
+\f1\fs20 o convert date. Sho
+\f0\b \cf2 uld be
+\f1\b0 \cf3  in 
+\f0\b \cf2 format
+\f1\b0 \cf3  yyyy-mm-
+\f0\b \cf2 dd or 
+\f1\b0 \cf3 yyyy/mm/dd")\
+           
+\f0\b \cf4  
+\f1\b0 \cf3 return\
+\
+
+\f0\b \cf4 \
+
+\f1\b0 \cf3 # sav
+\f0\b \cf4 e
+\f1\b0 \cf3 _data_u
+\f0\b \cf4 s
+\f1\b0 \cf3 ers\
+\
+import
+\f0\b \cf4  
+\f1\b0 \cf5 re\
+import logging\
+import birthdatemodule\
+\
+lo
+\f0\b \cf4 g
+\f1\b0 \cf3 ging.bas
+\f0\b \cf4 i
+\f1\b0 \cf3 cConfig(
+\f0\b \cf4 l
+\f1\b0 \cf3 evel=logg
+\f0\b \cf4 i
+\f1\b0 \cf3 ng.DEBUG
+\f0\b \cf4 ,
+\f1\b0 \cf3  format=
+\f0\b \cf4 '
+\f1\b0 \cf3 %
+\f0\b \cf4 (
+\f1\b0 \cf5 asctime)s% (name)s
+\f0\b \cf4  
+\f1\b0 \cf3 %\cf5 (levelname)s:%
+\f0\b \cf4 (
+\f1\b0 \cf3 me
+\f0\b \cf2 ssa
+\f1\b0 \cf3 g\cf6 e)s')\
+logger =
+\f0\b \cf4  lo
+\f1\b0 \cf3 gging.getLo
+\f0\b \cf4 g
+\f1\b0 \cf3 ger(
+\f0\b \cf4 _
+\f1\b0 \cf5 _name__)\
+\
+FILES = ('Python_use
+\f0\b \cf4 r
+\f1\b0 \cf3 s.txt
+\f0\b \cf2 ', 
+\f1\b0 \cf3 'C#_us
+\f0\b \cf2 er
+\f1\b0 \cf3 s.txt'
+\f0\b \cf4 )
+\f1\b0 \cf3 \
+\
+def s
+\f0\b \cf2 ave\cf4 _
+\f1\b0 \cf3 users_data():
+\f0\b \cf2 \
+  
+\f1\b0 \cf3   log
+\f0\b \cf4 g
+\f1\b0 \cf3 er.i
+\f0\b \cf4 nfo
+\f1\b0 \cf7 (
+\f0\b \cf4 "
+\f1\b0 \cf3 s
+\f0\b \cf4 t
+\f1\b0 \cf3 a\cf5 rting 
+\f0\b \cf4 u
+\f1\b0 \cf3 s\cf5 ers
+\f0\b \cf4  
+\f1\b0 \cf3 d
+\f0\b \cf2 at
+\f1\b0 \cf3 a process
+\f0\b \cf4 i
+\f1\b0 \cf3 ng")\
+    for fil
+\f0\b \cf2 e in \cf4 FIL
+\f1\b0 \cf5 ES:\
+      
+\f0\b \cf4  
+\f1\b0 \cf3  \cf5 try:\
+
+\f0\b \cf4   
+\f1\b0 \cf3      
+\f0\b \cf4  
+\f1\b0 \cf3     with
+\f0\b \cf4  
+\f1\b0 \cf3 open(file[:-4] + 
+\f0\b \cf2 '.c\cf4 s
+\f1\b0 \cf3 v', 'a') as csv_file:
+\f0\b \cf2 \
+  
+\f1\b0 \cf3      
+\f0\b \cf4  
+\f1\b0 \cf3     
+\f0\b \cf4  
+\f1\b0 \cf3  \cf5   p
+\f0\b \cf4 r
+\f1\b0 \cf3 i
+\f0\b \cf2 nt
+\f1\b0 \cf3 (*['Birth
+\f0\b \cf4 d
+\f1\b0 \cf3 ate', 'User'], file=csv_file)\
+
+\f0\b \cf4  
+\f1\b0 \cf3     
+\f0\b \cf4  
+\f1\b0 \cf3  \cf5          try:\
+ 
+\f0\b \cf4  
+\f1\b0 \cf3                   with open
+\f0\b \cf4 (
+\f1\b0 \cf3 f\cf7 i\cf3 le, 'r') as txt_file:\
+  
+\f0\b \cf2    
+\f1\b0 \cf3       
+\f0\b \cf2   
+\f1\b0 \cf3          
+\f0\b \cf4  
+\f1\b0 \cf3  logger.info(f"reading \{file\}")\
+ 
+\f0\b \cf4  
+\f1\b0 \cf3                
+\f0\b \cf4  
+\f1\b0 \cf3     
+\f0\b \cf4  
+\f1\b0 \cf3  i = 0\
+                     
+\f0\b \cf2    fo\cf4 r 
+\f1\b0 \cf3 line
+\f0\b \cf4  
+\f1\b0 \cf3 in tx
+\f0\b \cf4 t
+\f1\b0 \cf3 _file:\
+
+\f0\b \cf4  
+\f1\b0 \cf3                            data
+\f0\b \cf4  =
+\f1\b0 \cf3  \cf7 g\cf3 et_users_data(line)\
+      
+\f0\b \cf4  
+\f1\b0 \cf3      
+\f0\b \cf4  
+\f1\b0 \cf3  \cf5               print(*data, file=csv_file)\
+      
+\f0\b \cf4  
+\f1\b0 \cf3                  
+\f0\b \cf2     i 
+\f1\b0 \cf3 += 1\
+   
+\f0\b \cf2   
+\f1\b0 \cf3   
+\f0\b \cf4  
+\f1\b0 \cf3             logger.debug(f"
+\f0\b \cf4 f
+\f1\b0 \cf3 inish
+\f0\b \cf4  
+\f1\b0 \cf3 p\cf5 rocessing \{i\} users for the 
+\f0\b \cf4 f
+\f1\b0 \cf3 ile \{file
+\f0\b \cf2 \}")\
+ \cf4  
+\f1\b0 \cf3               excep
+\f0\b \cf4 t
+\f1\b0 \cf3  OSErro
+\f0\b \cf4 r
+\f1\b0 \cf3  \cf5 as e:\
+                    logg
+\f0\b \cf4 e
+\f1\b0 \cf3 r.error(f
+\f0\b \cf2 "error \cf4 r
+\f1\b0 \cf3 eading the file \{e\}
+\f0\b \cf4 "
+\f1\b0 \cf3 )\
+  
+\f0\b \cf4  
+\f1\b0 \cf3  \cf5     except:\
+            logger.warning(f"The 
+\f0\b \cf4 f
+\f1\b0 \cf3 i
+\f0\b \cf2 le 
+\f1\b0 \cf3 \{\cf6 file\} doesn't 
+\f0\b \cf4 e
+\f1\b0 \cf3 xist
+\f0\b \cf4 ")
+\f1\b0 \cf3 \
+        
+\f0\b \cf4 f
+\f1\b0 \cf3 inall
+\f0\b \cf4 y
+\f1\b0 \cf3 :\
+   
+\f0\b \cf4   
+\f1\b0 \cf3        logger.d
+\f0\b \cf4 e
+\f1\b0 \cf3 bug
+\f0\b \cf4 (
+\f1\b0 \cf3 f"The f
+\f0\b \cf4 u
+\f1\b0 \cf5 nction is execu
+\f0\b \cf4 t
+\f1\b0 \cf3 ed fo
+\f0\b \cf4 r
+\f1\b0 \cf3  the fi
+\f0\b \cf4 l
+\f1\b0 \cf3 e \{
+\f0\b \cf4 f
+\f1\b0 \cf3 ile\}")
+\f0\b \cf4 \
+
+\f1\b0 \cf5 def get_use
+\f0\b \cf4 r
+\f1\b0 \cf3 s_dat
+\f0\b \cf4 a(
+\f1\b0 \cf7 l
+\f0\b \cf4 i
+\f1\b0 \cf3 ne):\
+    
+\f0\b \cf4 l
+\f1\b0 \cf3 ine = line.rstri
+\f0\b \cf4 p
+\f1\b0 \cf3 ()\
+    user_n
+\f0\b \cf4 a
+\f1\b0 \cf3 m
+\f0\b \cf4 e
+\f1\b0 \cf3  = re
+\f0\b \cf2 .finda
+\f1\b0 \cf3 l
+\f0\b \cf4 l
+\f1\b0 \cf3 ('([
+\f0\b \cf4 a
+\f1\b0 \cf3 -zA-Z]+)\\s
+\f0\b \cf4 '
+\f1\b0 \cf3 , 
+\f0\b \cf2 li
+\f1\b0 \cf3 ne)\
+    d
+\f0\b \cf4  =
+\f1\b0 \cf3  \cf5 re.findall
+\f0\b \cf4 (
+\f1\b0 \cf3 '([0-9].*)', line)[0
+\f0\b \cf4 ]
+\f1\b0 \cf3 \
+  
+\f3\fs24  
+\f4 \cf0  date = birthdatemodule.get_birth_date(d)\
+    return [date, user_name]\
+\
+if __name__ == "__main__":\
+    save_users_data()\
+\
+\
+\
+}

@@ -1,0 +1,247 @@
+{\rtf1\ansi\ansicpg1252\cocoartf1671\cocoasubrtf600
+{\fonttbl\f0\fmodern\fcharset0 CourierNewPS-BoldMT;\f1\fswiss\fcharset0 Helvetica-Bold;\f2\fswiss\fcharset0 Helvetica;
+\f3\fmodern\fcharset0 CourierNewPS-BoldItalicMT;}
+{\colortbl;\red255\green255\blue255;\red108\green149\blue235;\red193\green145\blue255;\red189\green189\blue189;
+\red208\green208\blue208;\red102\green195\blue204;\red225\green191\blue255;\red57\green204\blue143;\red237\green148\blue192;
+\red120\green120\blue120;\red201\green162\blue109;\red133\green196\blue108;}
+{\*\expandedcolortbl;;\csgenericrgb\c42353\c58431\c92157;\csgenericrgb\c75686\c56863\c100000;\csgenericrgb\c74118\c74118\c74118;
+\csgenericrgb\c81569\c81569\c81569;\csgenericrgb\c40000\c76471\c80000;\csgenericrgb\c88235\c74902\c100000;\csgenericrgb\c22353\c80000\c56078;\csgenericrgb\c92941\c58039\c75294;
+\csgenericrgb\c47059\c47059\c47059;\csgenericrgb\c78824\c63529\c42745;\csgenericrgb\c52157\c76863\c42353;}
+\paperw11900\paperh16840\margl1440\margr1440\vieww10800\viewh8400\viewkind0
+\deftab708
+\pard\pardeftab708\ri-52\sa160\partightenfactor0
+
+\f0\b\fs22 \cf2 using \cf3 CSharpFunctionalExtensions\cf4 ;\
+\cf2 using \cf3 System\cf4 ;\
+\cf2 using \cf3 System
+\f1 \cf4 .
+\f0 \cf3 Collections
+\f1 \cf4 .
+\f0 \cf3 Generic\cf4 ;\
+\
+\cf2 namespace \cf3 LaValidation\
+\pard\pardeftab708\ri-52\sa160\partightenfactor0
+
+\f1 \cf4 \{\
+\pard\pardeftab708\ri-52\sa160\partightenfactor0
+
+\f0 \cf4    \cf2 public class \cf3 Session \cf5 : \cf3 ValueObject\
+   
+\f1 \cf4 \{\
+
+\f0        \cf2 readonly \cf3 DateRange \cf6 range\cf4 ;\
+       \cf2 readonly \cf7 Maybe\cf4 <\cf3 Place\cf4 > \cf6 place\cf4 ;\
+       \cf2 private \cf3 Session\cf4 (\cf3 DateRange \cf4 range, \cf7 Maybe\cf4 <\cf3 Place\cf4 > place)\
+       \{\
+           \cf2 this
+\f1 \cf4 .
+\f0 \cf6 range \cf4 = range;\
+           \cf2 this
+\f1 \cf4 .
+\f0 \cf6 place \cf4 = place;\
+       \}\
+\
+   \cf2 public static \cf7 Result\cf4 <\cf3 Session\cf4 , \cf3 Error\cf4 > \cf8 Create\cf4 (\cf3 DateRange \cf4 range,   \
+   \cf7 Maybe\cf4 <\cf3 Place\cf4 > place)\
+      \{\
+       \cf2 if \cf4 (place.\cf6 HasValue \cf4 && (range.\cf8 NumberOfDay\cf4 () > \cf9 5 \cf4 || \
+       range.\cf8 Contains\cf4 (\cf7 DayOfWeek
+\f1 \cf4 .
+\f0 \cf6 Sunday\cf4 )))\
+       \cf2 return \cf7 Result
+\f1 \cf4 .
+\f0 \cf8 Failure\cf4 <\cf3 Session\cf4 , \
+       \cf3 Error\cf4 >(\cf3 Errors
+\f1 \cf4 .
+\f0 \cf3 Session
+\f1 \cf4 .
+\f0 \cf8 PresentialMustLastAWeekMax\cf4 ());\
+       \cf2 return new \cf3 Session\cf4 (range, place);\
+      \}\
+\
+   \cf2 protected override \cf3 IEnumerable\cf4 <\cf2 object\cf4 > \cf8 GetEqualityComponents\cf4 ()\
+       \{\
+           \cf2 yield return \cf10 this.\cf6 range\cf4 ;\
+           \cf2 yield return \cf10 this.\cf6 place\cf4 ;\
+       
+\f1 \}\
+
+\f0    \}\
+\}\
+\pard\pardeftab708\ri-52\sl259\slmult1\sa160\partightenfactor0
+
+\f2\b0 \cf0 \
+\
+\pard\pardeftab708\ri-52\sa160\partightenfactor0
+
+\f0\b \cf2 using \cf3 FluentValidation\cf4 ;\
+\cf2 namespace \cf3 LaValidation\
+\pard\pardeftab708\ri-52\sa160\partightenfactor0
+
+\f1 \cf4 \{\
+\pard\pardeftab708\ri-52\sa160\partightenfactor0
+
+\f0 \cf4    \cf2 public class \cf3 SessionValidator \cf5 : \cf3 AbstractValidator\cf4 <\cf3 SessionDto\cf4 >\
+   
+\f1 \{\
+
+\f0        \cf2 public \cf3 SessionValidator\cf4 ()\
+       \{\
+         \cf8 RuleFor\cf4 (s \cf5 => \cf4 s.\cf6 Begin\cf4 ).\cf8 NotEmpty\cf4 ().\cf8 WithMessage\cf4 (\cf11 "Begin date \
+           must have a value"\cf4 );\
+         \cf8 RuleFor\cf4 (s \cf5 => \cf4 s.\cf6 End\cf4 ).\cf8 NotEmpty\cf4 ().\cf8 WithMessage\cf4 (\cf11 "End date must  \
+           have a value"\cf4 );\
+         \cf8 RuleFor\cf4 (s \cf5 => \cf4 s).\cf8 MustBeValueObject\cf4 (s \cf5 => \cf3 Session
+\f1 \cf4 .
+\f0 \cf8 Create\cf4 (\cf2 new \
+\pard\pardeftab708\ri-52\sa160\partightenfactor0
+\cf3             DateRange\cf4 (s.\cf6 Begin\cf4 , s.\cf6 End\cf4 ), \cf3 Place
+\f1 \cf4 .
+\f0 \cf8 Create\cf4 (s.\cf6 InseeCode\cf4 )));\
+       
+\f1 \}\
+\pard\pardeftab708\ri-52\sa160\partightenfactor0
+
+\f0 \cf4    \}\
+\}\
+\pard\pardeftab708\ri-52\sl259\slmult1\sa160\partightenfactor0
+
+\f2\b0 \cf0 \
+\
+\
+\pard\pardeftab708\ri-52\sa160\partightenfactor0
+
+\f0\b \cf2 using \cf3 System\cf4 ;\
+\cf2 namespace \cf3 LaValidation\
+\pard\pardeftab708\ri-52\sa160\partightenfactor0
+
+\f1 \cf4 \{\
+\pard\pardeftab708\ri-52\sa160\partightenfactor0
+
+\f0 \cf4    \cf2 public class \cf3 SessionDto\
+   
+\f1 \cf4 \{\
+
+\f0        \cf2 public \cf7 DateTime \cf6 Begin 
+\f1 \cf4 \{
+\f0  \cf8 get\cf4 ; \cf8 set\cf4 ; \}\
+       \cf2 public \cf7 DateTime \cf6 End 
+\f1 \cf4 \{
+\f0  \cf8 get\cf4 ; \cf8 set\cf4 ; \}\
+       \cf2 public string \cf6 InseeCode 
+\f1 \cf4 \{
+\f0  \cf8 get\cf4 ; \cf8 set\cf4 ; \}\
+   
+\f1 \}\
+\}\
+\pard\pardeftab708\ri-52\sl259\slmult1\sa160\partightenfactor0
+
+\f2\b0 \cf0 \
+\
+\pard\pardeftab708\ri-52\sl276\slmult1\sa160\partightenfactor0
+\cf0 \
+\
+\
+\
+\
+\pard\pardeftab708\ri-52\sa160\partightenfactor0
+
+\f0\b \cf2 using \cf3 System\cf4 ;\
+\cf2 using \cf3 Xunit\cf4 ;\
+\cf2 using \cf3 FluentAssertions\cf4 ;\
+\cf2 namespace \cf3 LaValidation
+\f1 \cf4 .
+\f0 \cf3 Tests\
+\pard\pardeftab708\ri-52\sa160\partightenfactor0
+
+\f1 \cf4 \{\
+\pard\pardeftab708\ri-52\sa160\partightenfactor0
+
+\f0 \cf4    \cf2 public class \cf3 SessionValidatorTest\
+   
+\f1 \cf4 \{\
+
+\f0        
+\f3\i \cf12 /// <summary>\
+       /// SessionDto validation example\
+       /// </summary>\
+   
+\f0\i0 \cf4 [\cf3 Fact\cf4 ]\
+   \cf2 public void \cf8 a_presential_session_longer_than_one_week_shoudld_be_invalid_dto\cf4 ()\
+      \{\
+         
+\f3\i \cf12 //given\
+         
+\f0\i0 \cf2 var \cf4 invalidPresentialSession = \cf2 new \cf3 SessionDto\cf10 ()\
+         
+\f1 \cf4 \{
+\f0  \cf6 InseeCode \cf4 = \cf11 "75001"\cf4 , \cf6 Begin \cf4 = \cf2 new \cf7 DateTime\cf4 (\cf9 2021
+\f1 \cf4 ,
+\f0 \cf9 1
+\f1 \cf4 ,
+\f0 \cf9 1\cf4 ), \cf6 End  \
+\cf4          = \cf2 new \cf7 DateTime\cf4 (\cf9 2021\cf4 , \cf9 1\cf4 , \cf9 8\cf4 ) \};\
+         \
+        
+\f3\i \cf12 // when\
+        
+\f0\i0 \cf2 var \cf4 validationResult =  \cf2 new \cf3 SessionValidator\cf4 ().\cf8 Validate\cf4 (invalidPresentialSession);\
+\
+        
+\f3\i \cf12 // then\
+        
+\f0\i0 \cf4 validationResult.\cf6 Errors
+\f1 \cf4 .
+\f0 \cf8 Should\cf4 ().\cf8 ContainSingle\cf4 (a \cf5 => \cf4 a.\cf6 ErrorMessage \cf4 == \cf11 "session.invalid.date||A presential session should last one week maximum and cannot contain sunday"\cf4 );\
+       \}\
+\
+\
+\
+\
+\
+\
+       
+\f3\i \cf12 /// <summary>\
+       /// Session Domain model validation example\
+       /// </summary>\
+       
+\f0\i0 \cf4 [\cf3 Fact\cf4 ]\
+       \cf2 public void \cf8 a_presential_session_longer_than_one_week_shoudld_be_invalid_core_domain\cf4 ()\
+       \{\
+          
+\f3\i \cf12 //given\
+      
+\f0\i0 \cf2 var \cf4 longerThanAWeek = \cf2 new \cf3 DateRange\cf4 (\cf2 new \cf7 DateTime\cf4 (\cf9 2021\cf4 , \cf9 1\cf4 , \cf9 1\cf4 ),  \
+        \cf2 new \cf7 DateTime\cf4 (\cf9 2021\cf4 , \cf9 1\cf4 , \cf9 8\cf4 ));\
+      \cf2 var \cf4 paris = \cf3 Place
+\f1 \cf4 .
+\f0 \cf8 Create\cf4 (\cf11 "75001"\cf4 );\
+\
+           
+\f3\i \cf12 // when\
+       
+\f0\i0 \cf2 var \cf4 validationResult = \cf3 Session
+\f1 \cf4 .
+\f0 \cf8 Create\cf4 (longerThanAWeek,paris);\
+\
+           
+\f3\i \cf12 // then\
+           
+\f0\i0 \cf4 validationResult.\cf6 Error
+\f1 \cf4 .
+\f0 \cf8 Should\cf4 ().\cf8 Be\cf4 (\cf3 Errors
+\f1 \cf4 .
+\f0 \cf3 Session
+\f1 \cf4 .
+\f0 \cf8 PresentialMustLastAWeekMax\cf4 ());\
+       
+\f1 \}\
+
+\f0    \}\
+\}\
+\pard\pardeftab708\ri-52\sl276\slmult1\sa160\partightenfactor0
+
+\f2\b0 \cf0 \
+\pard\pardeftab708\ri-52\sl276\slmult1\sa720\partightenfactor0
+\cf0 \
+}
